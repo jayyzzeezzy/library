@@ -23,8 +23,45 @@ addBookToLibrary(harryPotter);
 addBookToLibrary(atomicHabits);
 addBookToLibrary(numberThree);
 
-function makeBookCard () {
+// User Interface
+
+const container = document.querySelector('#book-card-container');
+
+function makeBookCards () {
     myLibrary.forEach((book) => {
+        const bookCard = document.createElement('div');
+        const title = document.createElement('h3');
+        const author = document.createElement('p');
+        const pages = document.createElement('p');
+        const buttonGroup = document.createElement('div');
+        const readBtn = document.createElement('button');
+        const removeBtn = document.createElement('button');
+
+        bookCard.classList.add('book-card');
+        buttonGroup.classList.add('button-group');
+        readBtn.classList.add('readBtn');
+        removeBtn.classList.add('removeBtn');
+
+        title.textContent = book.title;
+        author.textContent = book.author;
+        pages.textContent = `${book.pages} pages`;
+        removeBtn.textContent = 'Remove';
+
+        if (book.isRead) {
+            readBtn.textContent = 'Read';
+        } 
+        else {
+            readBtn.textContent = 'Not read';
+        }
+
+        bookCard.appendChild(title);
+        bookCard.appendChild(author);
+        bookCard.appendChild(pages);
+        buttonGroup.appendChild(readBtn);
+        buttonGroup.appendChild(removeBtn);
+        bookCard.appendChild(buttonGroup);
+        container.appendChild(bookCard);
+
         console.log(book.title)
     })
 };
