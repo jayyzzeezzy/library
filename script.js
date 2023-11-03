@@ -27,6 +27,30 @@ addBookToLibrary(numberThree);
 
 const container = document.querySelector('#book-card-container');
 
+// buttons
+const newBookBtn = document.querySelector('#newBookBtn');
+const submitBookBtn = document.querySelector('#submitBookBtn');
+newBookBtn.onclick = () => modal.showModal();
+
+// modal
+const form = document.querySelector('#enter-book-form');
+const modal = document.querySelector('#modal');
+form.addEventListener('submit', closeModal);
+function closeModal(event) {
+    addNewBook();
+    event.preventDefault();
+    modal.close();
+};
+
+function addNewBook() {
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    const isRead = document.querySelector('#is-read').checked;
+    const newBook = new Book(title, author, pages, isRead);
+    return addBookToLibrary(newBook);
+};
+
 function makeBookCards () {
     myLibrary.forEach((book) => {
         const bookCard = document.createElement('div');
