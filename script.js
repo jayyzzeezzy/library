@@ -89,3 +89,7 @@ function makeBookCards () {
         console.log(book.title)
     })
 };
+
+window.onload = () => {
+    makeBookCards();
+};
