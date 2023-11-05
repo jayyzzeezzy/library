@@ -54,7 +54,7 @@ function addNewBook() {
 };
 
 function makeBookCards () {
-    myLibrary.forEach((book, index) => {
+    myLibrary.forEach((book) => {
         const bookCard = document.createElement('div');
         const title = document.createElement('h3');
         const author = document.createElement('p');
@@ -80,6 +80,7 @@ function makeBookCards () {
             readBtn.textContent = 'Not read';
         }
 
+        readBtn.onclick = () => toggleRead(book);
         removeBtn.onclick = () => removeBook(book);
 
         bookCard.appendChild(title);
@@ -92,6 +93,17 @@ function makeBookCards () {
 
         console.log(book.title)
     })
+};
+
+function toggleRead(book) {
+    if (book.isRead) {
+        book.isRead = false;
+    }
+    else {
+        book.isRead = true;
+    }
+    clearCards();
+    makeBookCards();
 };
 
 function removeBook(book) {
