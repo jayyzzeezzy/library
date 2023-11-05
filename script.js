@@ -15,10 +15,10 @@ function addBookToLibrary (book) {
     myLibrary.push(book);
 };
 
+// dummy variables
 const harryPotter = new Book('Harry Potter', 'J. K. Rowling', '600', true);
 const atomicHabits = new Book('Atomic Habbits', 'James Clear', '600', true);
 const numberThree = new Book('Number Three', 'Third Spot', '3', false);
-
 addBookToLibrary(harryPotter);
 addBookToLibrary(atomicHabits);
 addBookToLibrary(numberThree);
@@ -27,15 +27,18 @@ addBookToLibrary(numberThree);
 
 const container = document.querySelector('#book-card-container');
 
-// buttons
+// UI buttons
 const newBookBtn = document.querySelector('#newBookBtn');
 const submitBookBtn = document.querySelector('#submitBookBtn');
+
 newBookBtn.onclick = () => modal.showModal();
 
-// modal
+// UI modal
 const form = document.querySelector('#enter-book-form');
 const modal = document.querySelector('#modal');
+
 form.addEventListener('submit', closeModal);
+
 function closeModal(event) {
     addNewBook();
     event.preventDefault();
@@ -44,6 +47,7 @@ function closeModal(event) {
     makeBookCards();
 };
 
+// UI logistics
 function addNewBook() {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
