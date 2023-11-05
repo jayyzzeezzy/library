@@ -40,6 +40,8 @@ function closeModal(event) {
     addNewBook();
     event.preventDefault();
     modal.close();
+    clearCards();
+    makeBookCards();
 };
 
 function addNewBook() {
@@ -52,7 +54,7 @@ function addNewBook() {
 };
 
 function makeBookCards () {
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
         const bookCard = document.createElement('div');
         const title = document.createElement('h3');
         const author = document.createElement('p');
@@ -78,6 +80,8 @@ function makeBookCards () {
             readBtn.textContent = 'Not read';
         }
 
+        removeBtn.onclick = () => removeBook(book);
+
         bookCard.appendChild(title);
         bookCard.appendChild(author);
         bookCard.appendChild(pages);
@@ -88,6 +92,16 @@ function makeBookCards () {
 
         console.log(book.title)
     })
+};
+
+function removeBook(book) {
+    myLibrary.splice(`${myLibrary.indexOf(book)}`, 1);
+    clearCards();
+    makeBookCards();
+};
+
+function clearCards() {
+    container.textContent = '';
 };
 
 window.onload = () => {
