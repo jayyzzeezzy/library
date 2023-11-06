@@ -79,9 +79,11 @@ function makeBookCards () {
 
         if (book.isRead) {
             readBtn.textContent = 'Read';
+            readBtn.classList.add('green-btn');
         } 
         else {
             readBtn.textContent = 'Not read';
+            readBtn.classList.add('red-btn');
         }
 
         readBtn.onclick = () => toggleRead(book);

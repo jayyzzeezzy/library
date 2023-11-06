@@ -1,0 +1,171 @@
+:root {
+    --background: rgb(255, 255, 234);
+    --button-color: #e5e8ee;
+    --header-color: white;
+    --button: #9333ea;
+    --shadow: rgba(0, 0, 0, 0.20) 0px 1px 4px 1px;
+    --not-read: rgb(255, 126, 126);
+    --not-read-hover:rgb(236, 116, 116);
+    --read: rgb(152, 255, 152);
+    --read-hover:rgb(136, 233, 136);
+}
+
+h1, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, Georgia, sans-serif;
+    background-color: var(--background);
+}
+
+.header {
+    background-color: var(--header-color);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-book {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newBookBtn {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--header-color);
+}
+
+.newBookBtn:hover {
+    background-color: var(--button);
+}
+
+#book-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 60px;
+    margin: 0 300px;
+}
+
+.book-card {
+    background-color: var(--header-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 20px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.removeBtn {
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--button-color);
+}
+
+.removeBtn:hover {
+    background-color: #d3d6db;
+}
+
+.readBtn {
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.red-btn {
+    background-color: var(--not-read);
+}
+
+.red-btn:hover {
+    background-color: var(--not-read-hover);
+}
+
+.green-btn {
+    background-color: var(--read);
+}
+
+.green-btn:hover {
+    background-color: var(--read-hover);
+}
+
+#modal {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background);
+    min-width: 200px;
+}
+
+#enter-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+input {
+    border: none;
+    font-size: 1rem;
+    height: 30px;
+    padding: 0 4px;
+}
+
+input:focus {
+    padding: 0 4px;
+}
+
+.isRead {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.isRead input {
+    width: 20px;
+    accent-color: white;
+}
+
+#submitBookBtn {
+    background-color: var(--read);
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#submitBookBtn:hover {
+    background-color: var(--read-hover);
+}
