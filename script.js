@@ -18,10 +18,10 @@ function addBookToLibrary (book) {
 // dummy variables
 const harryPotter = new Book('Harry Potter', 'J. K. Rowling', '600', true);
 const atomicHabits = new Book('Atomic Habbits', 'James Clear', '600', true);
-const numberThree = new Book('Number Three', 'Third Spot', '3', false);
+const lordOfTheRings = new Book('Lord of the Rings', 'John Ronald Reuel Tolkien', '1000', false);
 addBookToLibrary(harryPotter);
 addBookToLibrary(atomicHabits);
-addBookToLibrary(numberThree);
+addBookToLibrary(lordOfTheRings);
 
 // User Interface
 
