@@ -96,8 +96,6 @@ function makeBookCards () {
         buttonGroup.appendChild(removeBtn);
         bookCard.appendChild(buttonGroup);
         container.appendChild(bookCard);
-
-        console.log(book.title)
     })
 };
 

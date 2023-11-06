@@ -37,6 +37,7 @@ body {
     padding-bottom: 2.5rem;
 }
 
+/* Main content */
 .header {
     background-color: var(--header-color);
     box-shadow: var(--shadow);
@@ -131,6 +132,7 @@ body {
     background-color: var(--read-hover);
 }
 
+/* Modal */
 #modal {
     border: none;
     border-radius: 10px;
