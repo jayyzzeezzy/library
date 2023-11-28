@@ -33,17 +33,17 @@ library.addBookToLibrary(harryPotter);
 library.addBookToLibrary(atomicHabits);
 library.addBookToLibrary(lordOfTheRings);
 
-// User Interface
 
+// User Interface
 const container = document.querySelector('#book-card-container');
 
-// UI buttons
+// UI - buttons
 const newBookBtn = document.querySelector('#newBookBtn');
 const submitBookBtn = document.querySelector('#submitBookBtn');
 
 newBookBtn.onclick = () => modal.showModal();
 
-// UI modal
+// UI - modal
 const form = document.querySelector('#enter-book-form');
 const modal = document.querySelector('#modal');
 
@@ -57,7 +57,7 @@ function closeModal(event) {
     makeBookCards();
 };
 
-// UI logistics
+// UI - logistics
 function addNewBook() {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
