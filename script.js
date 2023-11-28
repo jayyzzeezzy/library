@@ -60,7 +60,7 @@ function addNewBook() {
     const pages = document.querySelector('#pages').value;
     const isRead = document.querySelector('#is-read').checked;
     const newBook = new Book(title, author, pages, isRead);
-    return addBookToLibrary(newBook);
+    return library.addBookToLibrary(newBook);
 };
 
 function makeBookCards () {
