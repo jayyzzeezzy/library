@@ -17,6 +17,10 @@ class Library {
     addBookToLibrary (book) {
         this.myLibrary.push(book);
     };
+
+    removeBookInLibrary (book) {
+        this.myLibrary.splice(`${library.myLibrary.indexOf(book)}`, 1);
+    }
 };
 
 const library = new Library();
@@ -117,7 +121,7 @@ function toggleRead(book) {
 };
 
 function removeBook(book) {
-    library.myLibrary.splice(`${library.myLibrary.indexOf(book)}`, 1);
+    library.removeBookInLibrary(book);
     clearCards();
     makeBookCards();
 };
