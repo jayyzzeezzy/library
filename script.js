@@ -1,9 +1,5 @@
 // Data Structure
 
-const myLibrary = [];
-
-let isRead = false;
-
 class Book {
     constructor(title, author, pages, isRead) {
         this.title = title;
@@ -13,17 +9,25 @@ class Book {
     }
 };
 
-function addBookToLibrary (book) {
-    myLibrary.push(book);
+class Library {
+    constructor() {
+        this.myLibrary = [];
+    }
+
+    addBookToLibrary (book) {
+        this.myLibrary.push(book);
+    };
 };
+
+const library = new Library();
 
 // dummy variables
 const harryPotter = new Book('Harry Potter', 'J. K. Rowling', '600', true);
 const atomicHabits = new Book('Atomic Habbits', 'James Clear', '600', true);
 const lordOfTheRings = new Book('Lord of the Rings', 'John Ronald Reuel Tolkien', '1000', false);
-addBookToLibrary(harryPotter);
-addBookToLibrary(atomicHabits);
-addBookToLibrary(lordOfTheRings);
+library.addBookToLibrary(harryPotter);
+library.addBookToLibrary(atomicHabits);
+library.addBookToLibrary(lordOfTheRings);
 
 // User Interface
 
@@ -60,7 +64,7 @@ function addNewBook() {
 };
 
 function makeBookCards () {
-    myLibrary.forEach((book) => {
+    library.myLibrary.forEach((book) => {
         const bookCard = document.createElement('div');
         const title = document.createElement('h3');
         const author = document.createElement('p');
@@ -113,7 +117,7 @@ function toggleRead(book) {
 };
 
 function removeBook(book) {
-    myLibrary.splice(`${myLibrary.indexOf(book)}`, 1);
+    library.myLibrary.splice(`${library.myLibrary.indexOf(book)}`, 1);
     clearCards();
     makeBookCards();
 };
