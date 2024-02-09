@@ -56,6 +56,7 @@ function checkInput(event) {
     }
     else {
         title.placeholder = "e.g. Harry Potter";
+        title.classList.remove("error");
     }
     
     if (author.validity.valueMissing) {
@@ -65,6 +66,7 @@ function checkInput(event) {
     }
     else {
         author.placeholder = "e.g. J. K. Rowling";
+        author.classList.remove("error");
     }
 
     if (pages.validity.valueMissing) {
@@ -73,7 +75,8 @@ function checkInput(event) {
         pages.classList.add("error");
     }
     else {
-        pages.placeholder = "e.g. 100";
+        pages.placeholder = "e.g. 1000";
+        pages.classList.remove("error");
     }
 
 };
@@ -91,6 +94,7 @@ function closeModal(event) {
     modal.close();
     clearCards();
     makeBookCards();
+    form.reset();
 };
 
 // UI - logistics
