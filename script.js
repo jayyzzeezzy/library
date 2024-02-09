@@ -43,6 +43,41 @@ const submitBookBtn = document.querySelector('#submitBookBtn');
 
 newBookBtn.onclick = () => modal.showModal();
 
+// constraint validation
+submitBookBtn.addEventListener('click', checkInput);
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#pages');
+function checkInput(event) {
+    if (title.validity.valueMissing) {
+        event.preventDefault();
+        title.placeholder = "Please enter a title";
+        title.classList.add("error");
+    }
+    else {
+        title.placeholder = "e.g. Harry Potter";
+    }
+    
+    if (author.validity.valueMissing) {
+        event.preventDefault();
+        author.placeholder = "Please enter author's name";
+        author.classList.add("error");
+    }
+    else {
+        author.placeholder = "e.g. J. K. Rowling";
+    }
+
+    if (pages.validity.valueMissing) {
+        event.preventDefault();
+        pages.placeholder = "Please enter page number";
+        pages.classList.add("error");
+    }
+    else {
+        pages.placeholder = "e.g. 100";
+    }
+
+};
+
 // UI - modal
 const form = document.querySelector('#enter-book-form');
 const modal = document.querySelector('#modal');
@@ -52,6 +87,7 @@ form.addEventListener('submit', closeModal);
 function closeModal(event) {
     addNewBook();
     event.preventDefault();
+    checkInput(event);
     modal.close();
     clearCards();
     makeBookCards();

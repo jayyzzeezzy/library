@@ -183,6 +183,10 @@ input:focus {
     background-color: var(--read-hover);
 }
 
+.error::placeholder {
+    color: red;
+}
+
 /* Footer */
 .footer {
     position: absolute;
